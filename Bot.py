@@ -7,7 +7,7 @@ bot = commands.Bot(command_prefix='$')
 
 @bot.command(pass_context=True)
 async def hel(ctx,): 
-    await bot.send_message(ctx.message.author,  'Commands:\n $hel = Bot sends a pm of a list of commands to the user.\n $test = Test to see if bot is responsive.')
+    await bot.send_message(ctx.message.author,  '`Commands:\n $hel = Bot sends a pm of a list of commands to the user.\n $test = Test to see if bot is responsive.`')
     
 
 
