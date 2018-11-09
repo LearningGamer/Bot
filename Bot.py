@@ -9,7 +9,11 @@ bot = commands.Bot(command_prefix='$')
 async def hel(ctx,): 
     await bot.send_message(ctx.message.author,  '`Commands:\n $hel = Bot sends a pm of a list of commands to the user.\n $test = Test to see if bot is responsive.`')
     
-
+@bot.command(pass_context=True)
+async def spam(ctx):
+  spammsg = 'LOLOLOLOLOLOLOLOL '
+  await bot.say(spammsg *100)
+  await bot.delete_message(msg.message)
 
 
 @bot.command(pass_context=True)
