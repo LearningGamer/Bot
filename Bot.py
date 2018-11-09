@@ -28,4 +28,5 @@ async def  on_ready():
     print("I'm in")
     print(bot.user.name)
     
+token = os.environ.get("DISCORD_BOT_SECRET")
 bot.run(token)
