@@ -1,7 +1,6 @@
 import discord
 import os
 from discord.ext import commands
-from discord.ext.commands import Bot
 
 bot = commands.Bot(command_prefix='$')
 
@@ -11,6 +10,10 @@ async def hel(ctx,):
     await bot.say('Sent a DM containing a list of commands')
     await bot.delete_message(ctx.message)
 
+@bot.command(pass_context=True)
+async def game(ctx): 
+    await bot.change_presence(game=discord.Game(name='with ur bitch lol'))
+  await bot.delete_message(ctx.message)
 
 @bot.command(pass_context=True)
 @commands.has_role('Bot Owner')
