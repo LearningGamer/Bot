@@ -11,9 +11,10 @@ async def hel(ctx,):
     await bot.delete_message(ctx.message)
 
 @bot.command(pass_context=True)
-async def game(ctx): 
-    await bot.change_presence(game=discord.Game(name='with ur bitch lol'))
-  await bot.delete_message(ctx.message)
+@commands.has_role('Bot Owner')
+async def game(ctx,*,status):
+    await bot.change_presence(game=discord.Game(name=status))
+    await bot.send_message(ctx.message.channel,"Bot status changed to {}".format(status))
 
 @bot.command(pass_context=True)
 @commands.has_role('Bot Owner')
